@@ -29,9 +29,10 @@ if uploaded_file is not None:
         df[text_cols] = df[text_cols].fillna("Unknown")  
         st.info("✔️ Trimmed text spacing and filled blank text with 'Unknown'.")
         num_cols = df.select_dtypes(include=["number"]).columns
+        null_counts = df[num_cols].isnull().sum().sum()
         for col in num_cols:
             df[col] = df[col].fillna(df[col].median())  
-        st.info("✔️ Filled missing numbers with the column median.")
+        st.info("✔️ ✔️ Filled **{null_counts}** missing numbers with the column median.")
         st.subheader("✨ Cleaned Data Preview")
         st.dataframe(df.head(5))
         output_buffer = io.BytesIO()
