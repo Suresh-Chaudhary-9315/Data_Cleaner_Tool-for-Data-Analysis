@@ -19,7 +19,7 @@ Make sure you have Python installed on your machine.
 ## 1. Clone the Repository
 
 git clone https://github.com
-cd YOUR_REPO_NAME
+cd Data_Cleaner_Tool-for-Data-Analysis
 
 ## 2. Install Required Packages
 
